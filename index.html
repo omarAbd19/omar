@@ -22,7 +22,7 @@ function displayName() {
   var name = document.getElementById("name").value;
   var count = document.getElementById("cnt").value;
   var display = document.getElementById("name-display");
-  for (var i = 0; i < count; i++) {
+  for (var i = 1; i <= count; i++) {
     var p = document.createElement("p");
     p.innerHTML = "Hello " + name;
     p.classList.add("name-display");
