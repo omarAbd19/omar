@@ -1,49 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Name Input</title>
-<style>
-    .name-display {
-        font-size: 24px;
-        text-align: center;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-    img {
-        position: relative;
-        max-width: 100%;
-    }
-</style>
-
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
 </head>
 <body>
-
-Name: <input type="text" id="name"><br><br>
-Count: <input type="text" id="cnt"><br><br>
-<button onclick="displayName()">Submit</button>
-
-<div id="name-display"></div>
-
-<script>
-function displayName() {
-  var name = document.getElementById("name").value;
-  var count = document.getElementById("cnt").value;
-  var display = document.getElementById("name-display");
-  display.innerHTML = "";
-  var img = document.createElement("img");
-  img.src = "https://media.tenor.com/r7GJHTnpdPAAAAAM/hahaha-happy.gif";
-  img.classList.add("name-display");
-  display.appendChild(img);
-  for (var i = 1; i <= count; i++) {
-    var p = document.createElement("p");
-    p.innerHTML = i + ". " + name;
-    p.classList.add("name-display");
-    display.appendChild(p);
-  }
-}
-</script>
-
+  <form>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="command">Command:</label>
+      <input type="text" id="command" name="command">
+    </div>
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description">
+    </div>
+    <button type="submit" id="submit">Submit</button>
+  </form>
+  <div id="commandList">
+    <!-- Section for displaying the list of saved commands -->
+  </div>
 </body>
 </html>
